@@ -56,6 +56,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
-app.set('port', process.env.PORT || 8080);
+//app.set('port', process.env.PORT || 8080);
 
 module.exports = app;
