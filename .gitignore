@@ -27,3 +27,9 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 .c9/
+<<<<<<< HEAD
+=======
+
+# mongodb stuff
+data/
+>>>>>>> c1f8cc644f4ceede1f033d3b8ee840b1aaad3456
