@@ -73,3 +73,41 @@
 			// modify the req/res in some way
 			next();
 		});
+
+* What we have been talking about is the app level middleware, which controls 
+	the routing at the application level. In order make the application more 
+	modular, and convenient, it's recommended to divide the routing based on 
+	different routes.
+
+	Let's say we have a section of the application under the route `/users`. In
+	order to use it, we first have to have a separate routing file, let's call 
+	it users.js and place it under `routes` directory.
+
+	Then from the main app, we can access it using:
+
+		var user = require('./routes/user');
+		app.use('/user', user);
+
+	In the file `users.js`, we can have the routing logic:
+
+		var express = require('express');
+		var router = express.Router();
+
+		// the next route starts from / but since it's already redirected
+		// from the root, it essentially means /user
+		router.get('/', function(req, res) {
+			// Show a welcome screen
+		});
+
+		// Path is /user/account from the main app
+		router.get('/account', function(req, res) {
+			// Show account screens
+		});
+
+		// Path is /user/logout from the main app
+		router.get('/logout', function(req, res) {
+			// Logout user
+		});
+
+	Of course, we have the option of using middlewares in the routing files 
+	too.

@@ -6,7 +6,6 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 
-<<<<<<< HEAD
 router.get('/helloworld', function(req, res) {
     res.render('helloworld', { title: 'Hello World' });
 });
@@ -48,8 +47,5 @@ router.post('/adduser', function(req, res) {
   });
 });
 	
-    
 
-=======
->>>>>>> c1f8cc644f4ceede1f033d3b8ee840b1aaad3456
 module.exports = router;
