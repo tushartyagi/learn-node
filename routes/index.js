@@ -6,6 +6,7 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 
+console.log("here");
 router.get('/helloworld', function(req, res) {
     res.render('helloworld', { title: 'Hello World' });
 });
@@ -31,7 +32,13 @@ router.post('/adduser', function(req, res) {
 
   var username = req.body.username;
   var useremail = req.body.useremail;
+  console.log(username, useremail);
 
+
+
+  
+
+  
   var collection = db.get('usercollection');
   collection.insert({
     "username" : username,
@@ -42,7 +49,7 @@ router.post('/adduser', function(req, res) {
     }
     else {
       res.location("userlist");
-      res.redirect("userlist");
+      res.redirect("/userlist");
     }
   });
 });

@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1> {{ title }} </h1>
+<form id="AddUser" action="/addUser" name="adduser" method="post">
+  <input id="inputUserName" name="" type="text" value=""/>
+  <input id="inputUserEmail" name="" type="text" value=""/>
+  <button id="btnSubmit" type="submit">Submit</button>
+</form>
+{% endblock %}
